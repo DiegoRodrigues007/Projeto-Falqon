@@ -1,45 +1,77 @@
 
 .container{
-    background-color: rgb(194, 76, 76);
-    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    background-color: #024059;
+    background-color: green;
+    justify-content: center;
+    align-items: center;
     h1{
         text-align: center;
+        font-weight: 300;
         font-family: sans-serif;
-        color: black;
+        color: white;
         margin-bottom: 30px;
     }
-
-    label{
-        font-family: sans-serif;
-        font-size: 20px;
-        color: black;
-        margin-left: 30px;
-    }
-    input{
-        width: 20%;
-        height: 30px;
-        border-radius: 5px;
-        border: 1px solid black;
-        margin-bottom: 20px;
-        padding-left: 10px;
-        margin-left: 20px;
-        border: none;
-        &:placeholder-shown{
-            color: red;
-        
+    .containerInput{
+        display: flex;
+        width: 100%;
+        .input{
+            margin-left: 30px;
+            width: 100%;
+           
+            label{
+                color: white;
+            }
+            input{
+                width: 90%;
+                height: 5vh;
+                font-size: 16px;
+            }
         }
+        
+       
     }
-    button{
-        width: 20%;
+    .btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+         width: 220px;
         height: 30px;
-        border-radius: 5px;
-        border: 1px solid black;
-        background-color: rgb(44, 23, 23);
-        color: white;
-        font-family: sans-serif;
-        font-size: 20px;
-        margin-left: 40%;
-        margin-top: 20px;
+        background-color: #024059;
         cursor: pointer;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        
+            a{
+                text-align: center;
+                 color: white;
+            }
+    }  
+}
+
+@media (max-width: 600px){
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        .containerInput{
+            display: flex;
+            flex-direction: column;
+            .input{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 100%;
+                margin-bottom: 30px;
+                margin-left: 15px;  
+                input{
+                    height: 5vh;
+                }
+                label{
+                    color: white;
+                }
+            } 
+        }
     }
 }

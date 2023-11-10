@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
-import * as C from "./styles";
+
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import styles from "../Signup/Signup.module.scss";
 
+import img from "../../Assets/img/register.svg";
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [emailConf, setEmailConf] = useState("");
@@ -35,9 +37,10 @@ const Signup = () => {
   };
 
   return (
-    <C.Container>
-      <C.Label>SISTEMA DE LOGIN</C.Label>
-      <C.Content>
+    <section className={styles.container}>
+      <img src={img} />
+      <div className={styles.content}>
+       <div className={styles.containerInput}> 
         <Input
           type="email"
           placeholder="Digite seu E-mail"
@@ -56,16 +59,17 @@ const Signup = () => {
           value={senha}
           onChange={(e) => [setSenha(e.target.value), setError("")]}
         />
-        <C.labelError>{error}</C.labelError>
+        <label className={styles.error}>{error}</label>
         <Button Text="Inscrever-se" onClick={handleSignup} />
-        <C.LabelSignin>
+        <div className={styles.entrar}>
           Já tem uma conta?
-          <C.Strong>
-            <Link to="/">&nbsp;Entre</Link>
-          </C.Strong>
-        </C.LabelSignin>
-      </C.Content>
-    </C.Container>
+          <div >
+            <Link to="/" className={styles.link}>&nbsp;Entre</Link>
+          </div>
+        </div>
+        </div>        
+      </div>
+    </section>
   );
 };
 

@@ -1,4 +1,4 @@
-import IconLabelButtons from "../ButtonSend/index";
+
 import styles from "../Header/Header.module.scss";
 import React from "react";
 
@@ -14,16 +14,23 @@ const Header = () => {
 
         <header className={styles.container}>
             <h1>Lista de tarefas</h1>
-            <div>
-                <label>Identificador:</label>
-                <input type="text" placeholder="Digite o identificador"></input>
-                <label>Nome:</label>
-                <input type="text" placeholder="Digite seu nome"></input>
-                <label>Descrição:</label>
-                <input type="text" placeholder="Digite a tarefa"></input>
-                <button type="Submit"  onClick = { handleSave}>Enviar</button>
-                
+            <div className={styles.containerInput}>
+                <div className={styles.input}>
+                    <label>Identificador</label>
+                    <input type="text" placeholder="Digite o identificador"></input>
+                </div>
+                <div className={styles.input}>
+                    <label>Nome</label>
+                    <input type="text" placeholder="Digite seu nome"></input>
+                </div>
+                <div className={styles.input}>
+                    <label>Descrição</label>
+                    <input type="text" placeholder="Digite a tarefa"></input>
+                </div>
             </div>
+            <div className={styles.btn}>
+                    <a type="Submit"  onClick = { handleSave}>Enviar</a>
+                </div>
         </header>
 
 

@@ -18,9 +18,12 @@ function createData(identificador, name, descricao, opcoes) {
 }
 
 const rows = [
-  createData('02262','Diego', "fazer teste no site que desenvolvi hoje "),
-  createData('01211', "Maria" ),
-  createData('5689', "carlos"),
+  createData('02262','Diego', "Atualizar aplicativo"),
+  createData('01211', "Maria Eduarda", "Fazer teste automatizado" ),
+  createData('35289', "Severino", "Desenvolver o site da empresa"),
+  createData('74423', "Carlos", "Criar layout do site"),
+  createData('00014', "Isabela", "Configurar banco de dados"),
+  createData('02005', "Gustavo","Criar banner"),
 ];
 
 const handleRemove = () =>{
@@ -51,15 +54,15 @@ export default function BasicTable( setDataEdit, identificador, name, descricao)
                       key={row.identificador}
                       sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                     >
-                      <TableCell component="th" scope="row">
+                      <TableCell component="th" scope="row" >
                         {row.identificador}
                       </TableCell>
                       <TableCell align="center">{row.name}</TableCell>
-                      <TableCell align="center">{row.descricao}</TableCell>
-                      <TableCell align="center">{row.opcoes}
+                      <TableCell align="center" >{row.descricao}</TableCell>
+                      <TableCell align="center"  >{row.opcoes }
                       
-                      <EditIcon onClick = {() => setDataEdit({identificador, name, descricao})} />
-                      <DeleteForeverIcon onClick = {() => handleRemove()}/>
+                      <EditIcon className={styles.edit} onClick = {() => setDataEdit({identificador, name, descricao})} />
+                      <DeleteForeverIcon className={styles.del} onClick = {() => handleRemove()}/>
                       
                       </TableCell>
                       
